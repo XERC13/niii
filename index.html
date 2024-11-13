@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เว็บโดเนทผ่านทรูมันนี่วอเลท</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298); /* พื้นหลังน้ำเงิน */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1); /* พื้นหลังโปร่งแสง */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .heading {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .amount-label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .amount-input {
+            padding: 12px;
+            font-size: 18px;
+            width: 80%;
+            border-radius: 8px;
+            border: 1px solid #2a5298;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.2); /* พื้นหลังกรอกข้อมูลโปร่งแสง */
+            color: #fff;
+            outline: none;
+        }
+
+        .amount-input::placeholder {
+            color: #ccc;
+        }
+
+        .donate-button {
+            background-color: #3498db; /* น้ำเงินสด */
+            color: #fff;
+            border: none;
+            padding: 15px 35px;
+            font-size: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .donate-button:hover {
+            background-color: #2980b9; /* น้ำเงินเข้ม */
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="heading">ขอบคุณสำหรับการสนับสนุน!</h1>
+        <p class="amount-label">กรุณากรอกจำนวนเงินที่คุณต้องการบริจาค:</p>
+        <input type="number" id="donateAmount" class="amount-input" placeholder="ไม่จำเป็นต้องใส่แค่โอนมาที่เบอร์ด้านล่าง" min="1">
+        <br>
+        <button class="donate-button" onclick="donate()">บริจาคตอนนี้</button>
+
+        <div class="footer">
+            <p>โอนเงินผ่าน <strong>TrueMoney Wallet</strong> ไปที่เบอร์ <strong>0829308810</strong></p>
+        </div>
+    </div>
+
+    <script>
+        function donate() {
+            const amount = document.getElementById("donateAmount").value;
+            if (amount && amount > 0) {
+                alert(`ขอบคุณที่บริจาค ${amount} บาท! กรุณาโอนผ่าน TrueMoney Wallet ไปที่เบอร์ 0829308810.`);
+            } else {
+                alert("กรุณากรอกจำนวนเงินที่ถูกต้อง!");
+            }
+        }
+    </script>
+
+</body>
+</html>
